@@ -19,8 +19,8 @@ const activeStart = () => {
     if (dateDiff <= 1000) {
       clearInterval(interval);
     }
-    let foo = convertMs(dateDiff);
-    const { days, hours, minutes, seconds } = foo;
+
+    const { days, hours, minutes, seconds } = convertMs(dateDiff);
     daysRemaining.textContent = addLeadingZero(days);
     hoursRemaining.textContent = addLeadingZero(hours);
     minutesRemaining.textContent = addLeadingZero(minutes);
