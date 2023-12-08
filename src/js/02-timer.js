@@ -16,12 +16,10 @@ const activeStart = () => {
   dateDiff = inputDate - date;
 
   const taimerFu = () => {
-    console.log(dateDiff);
-    if (dateDiff <= 0) {
+    if (dateDiff <= 1000) {
       clearInterval(interval);
     }
     let foo = convertMs(dateDiff);
-    console.log(foo);
     const { days, hours, minutes, seconds } = foo;
     daysRemaining.textContent = addLeadingZero(days);
     hoursRemaining.textContent = addLeadingZero(hours);
@@ -41,8 +39,6 @@ const options = {
   onClose(selectedDates) {
     inputDate = selectedDates[0].getTime();
     date = new Date().getTime();
-    console.log(inputDate);
-    console.log(date);
     if (inputDate < date) {
       window.alert('Please choose a date in the future');
       btnStart.disabled = true;
@@ -54,7 +50,6 @@ const options = {
 flatpickr(onInput, options);
 
 function convertMs(ms) {
-  console.log(ms);
   const second = 1000;
   const minute = second * 60;
   const hour = minute * 60;

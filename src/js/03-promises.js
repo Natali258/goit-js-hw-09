@@ -8,7 +8,7 @@ function activePromise(evt) {
   let valueDelay = Number(delayForm.value);
   let valueStep = Number(stepForm.value);
   let valueAmount = Number(amountForm.value);
-  for (let i = 0; i <= valueAmount; i += 1) {
+  for (let i = 1; i <= valueAmount; i += 1) {
     createPromise(i, valueDelay + valueStep * i)
       .then(({ position, delay }) => {
         console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
@@ -20,8 +20,6 @@ function activePromise(evt) {
 }
 
 function createPromise(position, delay) {
-  console.log(position);
-  console.log(delay);
   return new Promise((resolve, reject) => {
     const shouldResolve = Math.random() > 0.3;
     setTimeout(() => {
