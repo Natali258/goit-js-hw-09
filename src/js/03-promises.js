@@ -3,8 +3,8 @@ const stepForm = document.querySelector('[name="step"]');
 const amountForm = document.querySelector('[name="amount"]');
 const btn = document.querySelector('button');
 
-function activePromise(evt) {
-  evt.preventDefault();
+function activePromise(e) {
+  e.preventDefault();
   let valueDelay = Number(delayForm.value);
   let valueStep = Number(stepForm.value);
   let valueAmount = Number(amountForm.value);
